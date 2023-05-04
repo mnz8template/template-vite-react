@@ -1,1 +1,2 @@
-export * from './generated-route';
+// below == export * from './react-convention-route/index';
+export * from './react-convention-route/';
