@@ -46,8 +46,8 @@ function route_stringify() {
     generated_routes_by_id({
       routesById: layout_routes,
       routeComponents: route_components,
-    })
-  ).replace(componentRE, componentReplacer);
+    }),
+  ).replace(componentReg, componentReplacer);
 
   return `import React from "react";
 
@@ -90,7 +90,7 @@ function generated_routes_by_id({ routesById, parentId, routeComponents }: Gener
     });
 }
 
-const componentRE = /"(?:component|element)":("(.*?)")/g;
+const componentReg = /"(?:component|element)":("(.*?)")/g;
 
 function componentReplacer(str: string, replaceStr: string, path: string) {
   return str.replace(replaceStr, path);
